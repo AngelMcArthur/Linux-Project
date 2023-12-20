@@ -151,16 +151,16 @@
   - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/fbd64944-c360-4213-9bc8-905ff9a6c2f8)
 
 - <b>4. Unattended Guest Setup
-  - a. Choose a username, hostname (device name) and password
-  - b. Leave "Domain Name" alone
-  - c. Click check box for "Guest Additions"
-  - d. Click [Next]</b>
+  - a) Choose a username, hostname (device name) and password
+  - b) Leave "Domain Name" alone
+  - c) Click check box for "Guest Additions"
+  - d) Click [Next]</b>
   - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/4295bda6-3601-4aa4-a3b6-dfab7fef3680)
  
 - <b>5. Allocate Memory and CPU
-  - a. Give about 4,096 Megabytes (4.096 Gigabytes) and at least 4 CPUs
-  - b. Enable EFI
-  - Click [Next]</b>
+  - a) Give about 4,096 Megabytes (4.096 Gigabytes) and at least 4 CPUs
+  - b) Enable EFI
+  - c) Click [Next]</b>
   - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/ddf9873e-8f41-4d2a-bc07-f8563deb74e6)
   - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/6d4d37a4-ee7d-4736-8370-eab1bb9f3245)
  
@@ -178,4 +178,78 @@
 
 
 <h1>Ubuntu Setup</h1>
+
+<h2>Setup Pages</h2>
+
+- <b>1. You should land on this screen. Choose your language and click [Next]</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/25683594-becd-4fef-a7e9-43486f83be11)
+
+- <b>2. Select Install Ubuntu and Click [Next]</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/4be39357-4a0c-43f1-81b5-22126c7d8c70)
+ 
+- <b>3. Choose Keyboard Layout and Click [Next]</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/79af9ea6-542b-4527-a074-dbec0eb3ce5a)
+
+- <b>4. Choose a network connection type and Click [Next]</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/b91360ae-93d2-49ad-a0a8-157955f0d41a)
+ 
+- <b>5. Click the update if available</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/fb9d55fa-6683-4a7a-a271-4bffef7fd3ce)
+ 
+- <b>6. Restart the Installer</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/29b52f49-0254-44e7-a7ca-e2fe2b219589)
+ 
+- <b>7. Click [Next] until you reach this screen:
+  - a) Default installation to reduce your attack surface
+  - b) Install the drivers and support
+  - c) Click [Next]</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/b72b7400-30a7-4def-a073-4933783138b8)
+
+- <b>8. Choose manual partitioning and Click [Next]</b>
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/d999fbea-aa16-4906-bde8-733c95f0d150)
+
+<!---------------------------------------------------------------------- SECTION BREAK ---------------------------------------------------------------------->
+
+<h2>Define Multiple Partitions</h2>
+
+<i>(Note) Will be using Ext4 instead of more secure/under development Btrfs for stability/simplicity but suggest learning how to set it up.</i>
+
+<h3>1. Separate /boot</h3>
+
+- <b>Select Free Space, then click the "+" sign.</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/050db9b3-d37b-4cb7-b251-c7c0ea149a77)
+- <b>a) Size: 500 MB
+- b) Used as: Ext4
+- c) Mount Point: /boot
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/231587fe-451c-4d93-acce-651c54049631)
+- <b>Result:</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/fbadacbe-e7e5-496b-a58c-68db6f772afc)
+  - <i>(Note) /boot/efi is automatically created and that is normal.</i>
+
+- <b>Notes:
+- Priority - [LOW]
+- Significance:</b> <i>Separating /boot helps in keeping the kernel and bootloader files isolated.
+- This is useful in situations where the root file system is encrypted, as the bootloader can access the /boot partition without encryption.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+
+<h3>2. Separate /swap</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- Size: Amount of Ram you chose (4GB)
+- Used as: Swap
+- Mount Point: N/A
+- Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/6a6d57a3-c24a-4a9b-b4e2-3ac5497052a3)
+- <b>Result:</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/64ab8733-cb8e-428f-8e51-7c12faa3387c)
+
+- <b>Notes:
+- Priority - [LOW]
+- Significance:</b> <i>Swap is a special area on the disk that the system uses as extra memory. 
+- A good rule of thumb is to make the swap partition the same size as your RAM, or 1.5 times that amount if you have less than 4GB of RAM.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
 
