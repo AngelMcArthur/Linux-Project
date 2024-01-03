@@ -377,14 +377,98 @@
 - b) Used as: Ext4
 - c) Mount Point: /
 - d) Click [OK]
-- e) Click [Next]
+- e) Click [Next]</b>
 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/856fc6fd-6cc7-4e31-8d42-75d86c22b47d)
  - <b>Result:</b>
- 	-	![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/82f76a64-9510-4309-b044-db163a7fd0ce)
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/82f76a64-9510-4309-b044-db163a7fd0ce)
 
 - <b>Notes:
-- Priority - [HIGH]
+- Priority - [HIGH]</b>
 
 <!---------------------------------------------------------------------- SECTION BREAK ---------------------------------------------------------------------->
+
+<h2>Ubuntu Finish Install</h2>
+
+- <b>1. Click [Install]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/924e4733-beed-41a6-a9a9-a151503540ac)
+
+- <b>2. Select Timezone then click [Next]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/11a5c8a2-387b-487d-8205-7817b011216c)
+
+- <b>3. Setup account by typing in your name, computer name, username, and password.
+- 4. Then choose the "Require my password to log in" option for extra security.
+- 5. Leave "Use Active Directory" unchecked.
+- 6. Click [Next]</b>
+	-	![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/8a84c31b-6ea8-4b73-946f-d3eda3e45085)
+- <b>7. Choose your Theme</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/6d1055d3-2d65-4fa9-b7f6-a41f4c93fbfc)
+- <b>8. Restart</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/0d1a4320-3c19-4392-8762-b8b7e98bad63)
+- <b>9. Once it's booted back up then you can sign in.</b>
+
+<!---------------------------------------------------------------------- SECTION BREAK ---------------------------------------------------------------------->
+
+<h2>Harden VirtualBox</h2>
+
+<h3>1. Enable Encryption</h3>
+
+- <b>a) Click on VM (Ubuntu) and then click "Settings"</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/67e5eacd-decc-4c71-9145-43275988dc3a)
+- <b>b) In the Settings popup, look in the "General" tab and within that tab click the "Disk Encryption tab.</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/072b3cb3-3f4a-492d-b573-11f01ba086fc)
+- <b>c) Click the checkbox that says "Enable Disk Encryption"</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/01809a22-8c3c-426a-8aa7-ebcbb8929405)
+- <b>d) Below that, where it says "Disk Encryption Cipher", select the drop down menu next to it and click "AES-XTS256-PLAIN64"</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/65dc1c85-99d1-4449-ad3b-e1f9f367b674)
+- <b>e) Create a password  in "Enter New Password" and retype the password in "Confirm New Password"</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/60d490de-82b8-45a3-99b6-1ab4ccbafa29)
+- <b>f) Click OK and wait for encryption</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/f29f6979-6236-466a-9d87-1435695483d0)
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>2. Set a Strong Password (Was complete during setup)</h3>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>3. Disable Unnecessary Features (All located in VM Settings)</h3>
+
+- <b>a) USB Support:</b>
+	- <i>(Note) If your virtual machine doesn't require USB devices, you can disable USB support to reduce the risk of potential attacks through USB connections.</i>
+ 		- In the left sidebar, select "USB."
+   	- Uncheck the box for "Enable USB Controller."
+   	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/d63834c2-9ce6-4153-ad0b-755d4f7f2560)
+ 
+ - <b>b) Shared Folders/Clipboard:</b>
+ 	- <i>(Shared Folder Note) If you don't need to share files between the host and the virtual machine, you can disable shared folders. This can help prevent unauthorized access to files.
+		
+	- (Clipboard Note) Disable clipboard sharing if you don't need to copy and paste data between the host and the virtual machine. This reduces the risk of sensitive information being inadvertently transferred.</i>
+ 		- Go to the "Shared Folders" tab.
+   	- Remove any shared folders that you don't need.
+   	- Alternatively, you can uncheck "Enable Shared Clipboard" under the "General" tab to disable all shared features.
+  
+- <b>c) Drag and Drop:</b>
+	- <i>(Note) Similar to clipboard sharing, if you don't need to drag and drop files between the host and the virtual machine, you can disable this feature for added security.</i>
+ 		- Go to the "General" tab.
+   	- Under "Advanced," set "Drag'n'Drop" to "Disabled" or "Host To Guest" if you need one-way drag and drop.
+   	- ![Screenshot 2024-01-03 024908](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/ba627264-7edf-4022-814e-47dba52ea38d)
+
+- <b>d) Audio Support:</b>
+	- <i>Note) If your virtual machine doesn't require audio capabilities, you can disable audio support to reduce the attack surface.</i>
+ 		- Go to the "Audio" tab.
+    - Uncheck the box for "Enable Audio."
+    - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/a390008c-3965-4509-a460-e5aabc92a7a4)
+ 
+- <b>e) Remote Display (VRDP):</b>
+	- <i>(Note) If you don't need remote desktop access to your virtual machine, you can disable the VirtualBox Remote Desktop Extension (VRDE). This helps prevent potential remote access vulnerabilities.</i>
+		- Go to the "Display" tab.
+  	- Under "Screen," uncheck "Enable Server"
+  	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/f0f821e8-5078-45dc-a012-c7f364d5913f)
+
+- <b>f) Serial and Parallel Ports:</b>
+	- <i>(Note) If your virtual machine doesn't need serial or parallel port support, you can disable these features to reduce the attack surface.</i>
+ 		- Go to the "Ports" tab.
+   	- Disable any serial or parallel ports that you don't need.
+   	- 
 
 
