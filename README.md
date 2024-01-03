@@ -229,8 +229,7 @@
 
 - <b>Notes:
 - Priority - [LOW]
-- Significance:</b> <i>Separating /boot helps in keeping the kernel and bootloader files isolated.
-- This is useful in situations where the root file system is encrypted, as the bootloader can access the /boot partition without encryption.</i>
+- Significance:</b> <i>Separating /boot helps in keeping the kernel and bootloader files isolated. This is useful in situations where the root file system is encrypted, as the bootloader can access the /boot partition without encryption.</i>
 
 <!-------------------------------------- SMALL BREAK -------------------------------------->
 
@@ -238,18 +237,154 @@
 <h3>2. Separate /swap</h3>
 
 - <b>Select Free Space, then click the "+" sign.
-- Size: Amount of Ram you chose (4GB)
-- Used as: Swap
-- Mount Point: N/A
-- Click [OK]</b>
+- a) Size: Amount of Ram you chose (4GB)
+- b) Used as: Swap
+- c) Mount Point: N/A
+- d) Click [OK]</b>
 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/6a6d57a3-c24a-4a9b-b4e2-3ac5497052a3)
 - <b>Result:</b>
 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/64ab8733-cb8e-428f-8e51-7c12faa3387c)
 
 - <b>Notes:
 - Priority - [LOW]
-- Significance:</b> <i>Swap is a special area on the disk that the system uses as extra memory. 
-- A good rule of thumb is to make the swap partition the same size as your RAM, or 1.5 times that amount if you have less than 4GB of RAM.</i>
+- Significance:</b> <i>Swap is a special area on the disk that the system uses as extra memory. A good rule of thumb is to make the swap partition the same size as your RAM, or 1.5 times that amount if you have less than 4GB of RAM.</i>
 
 <!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>3. Seperate /home</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 5 GB
+- b) Used as: Ext4
+- c) Mount Point: /home
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/8e5c782f-1b0c-491c-a650-f54c814c2672)
+ - <b>Result:</b>
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/b90d3adf-7ab0-4ef8-8b57-7e473b1a28b4)
+
+- <b>Notes:
+- Priority - [LOW]
+- Significance:</b> <i>Separating /home allows for easier system upgrades or reinstalls without losing user data. It also makes it possible to use different file system options, such as encryption, for /home.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>4. Separate /usr</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 5 GB
+- b) Used as: Ext4
+- c) Mount Point: /usr
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/d63ca8a1-0d6e-4858-8b8c-b5778e1952b0)
+- <b>Result:</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/3403dc64-db78-4ac8-bd26-d6b6ef9a4507)
+
+- <b>Notes:
+- Priority - [LOW]
+- Significance:</b> <i>Separating /usr can be useful in scenarios where you want to mount it read-only or share it among multiple systems.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>5. Separate /var</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 2 GB
+- b) Used as: Ext4
+- c) Mount Point: /var
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/e1038f1d-c32e-42fe-8368-4f360c21b7d6)
+- <b>Result:</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/0db258d5-a3f9-4a9d-834d-06e1badede03)
+
+- <b>Notes:
+- Priority - [MEDIUM]
+- Significance:</b> <i>Separating /var is beneficial for systems with dynamic content such as databases and log files. It helps prevent issues related to running out of disk space in critical system directories.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>6. Separate /var/log</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 500 MB
+- b) Used as: Ext4
+- c) Mount Point: /var/log
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/8e149d1c-e728-4e69-9e5e-5d4fd651f95a)
+ - <b>Result:</b>
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/033dbfe5-7b16-453f-986a-557bce1ece1d)
+
+- <b>Notes:
+- Priority - [HIGH]
+- Significance:</b> <i>Separating /var/log allows for better management of log files, preventing them from consuming all available disk space.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>7. Separate /var/log/audit</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 250 MB
+- b) Used as: Ext4
+- c) Mount Point: /var/log/audit
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/536fc19e-74a6-48db-80b5-a9cbc5656182)
+ - <b>Result:</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/a33233df-4b2f-406b-b02f-249320c5a2c7)
+
+- <b>Notes:
+- Priority - [HIGH]
+- Significance:</b> <i>Separating /var/log/audit allows for better management and isolation of audit logs.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>8. Separate /tmp</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 1 GB
+- b) Used as: Ext4
+- c) Mount Point: /tmp
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/10c4efc7-a120-4069-83ac-2811cc3239f9)
+ - <b>Result:</b>
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/339b9f39-00c1-429f-9b5e-8c159fe3abb4)
+
+- <b>Notes:
+- Priority - [HIGH]
+- Significance:</b> <i>Separating /tmp allows for better management of temporary files.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>9. Separate /var/tmp</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: 5 GB
+- b) Used as: Ext4
+- c) Mount Point: /var/tmp
+- d) Click [OK]</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/4b41bf37-8433-473d-ac9e-35b3d88f6805)
+ - <b>Result:</b>
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/7aeac61a-f3f4-4d63-8ff6-dc2523c99849)
+
+- <b>Notes:
+- Priority - [HIGH]
+- Significance:</b> <i>Separating /var/tmp allows for better management of temporary files.</i>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>10. Separate /</h3>
+
+- <b>Select Free Space, then click the "+" sign.
+- a) Size: The Rest
+- b) Used as: Ext4
+- c) Mount Point: /
+- d) Click [OK]
+- e) Click [Next]
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/856fc6fd-6cc7-4e31-8d42-75d86c22b47d)
+ - <b>Result:</b>
+ 	-	![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/82f76a64-9510-4309-b044-db163a7fd0ce)
+
+- <b>Notes:
+- Priority - [HIGH]
+
+<!---------------------------------------------------------------------- SECTION BREAK ---------------------------------------------------------------------->
+
 
