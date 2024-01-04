@@ -439,8 +439,8 @@
    	- Uncheck the box for "Enable USB Controller."
    	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/d63834c2-9ce6-4153-ad0b-755d4f7f2560)
  
- - <b>b) Shared Folders/Clipboard:</b>
- 	- <i>(Shared Folder Note) If you don't need to share files between the host and the virtual machine, you can disable shared folders. This can help prevent unauthorized access to files.
+- <b>b) Shared Folders/Clipboard:</b>
+	- <i>(Shared Folder Note) If you don't need to share files between the host and the virtual machine, you can disable shared folders. This can help prevent unauthorized access to files.
 		
 	- (Clipboard Note) Disable clipboard sharing if you don't need to copy and paste data between the host and the virtual machine. This reduces the risk of sensitive information being inadvertently transferred.</i>
  		- Go to the "Shared Folders" tab.
@@ -469,6 +469,77 @@
 	- <i>(Note) If your virtual machine doesn't need serial or parallel port support, you can disable these features to reduce the attack surface.</i>
  		- Go to the "Ports" tab.
    	- Disable any serial or parallel ports that you don't need.
-   	- 
+   	- ![Screenshot 2024-01-03 033245](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/0fdbae0d-c84e-4ac5-97e6-0120f78a18e1)
 
+- <b>g) 3D Acceleration:</b>
+	- (Note) If your virtual machine doesn't require 3D graphics acceleration, you can disable this feature to reduce the risk of graphics-related vulnerabilities.
+		- Go to the "Display" tab.
+		- Uncheck the box for "Enable 3D Acceleration."
+		- ![Screenshot 2024-01-03 033607](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/d44d3e82-dd92-4884-9be0-4fef92402a37)
+
+- <b>Network Adapters:</b>
+	- <i>(Note) Disable unnecessary network adapters if your virtual machine doesn't require multiple network connections. This helps reduce the potential for network-related attacks.</i>
+ 		- Go to the "Network" tab.
+   	- Remove or disable any unnecessary network adapters. You can click on each adapter and click the checkbox to remove it.
+   	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/2ac847c2-df38-4a04-b1a9-fa16435b88c4)
+
+ <!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>4. Limit Resource Access (Completed when setting up amount of resources to allocate… adjust as needed)</h3>
+
+ <!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>5. Monitor Virtual Machine Activity (All located in VM Settings)</h3>
+
+- <b>a) Find and select the "System" tab.</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/5837c052-739c-46a2-95cd-024a2af262e3)
+ 
+- <b>b) Enable Logs:</b>
+	- Under the "Extended Features" section, check the box next to "Enable I/O APIC."
+ 	- Check the box next to "Hardware Clock in UTC Time."
+  - <i>(Note) These settings enable additional logging features that can be useful for monitoring.</i>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/5580bb06-d355-44d0-9db6-bc226e00672a)
+
+- <b>c) Click "OK" to save the changes and close the Settings window.</b>
+
+<!-------------------------------------- SMALL BREAK -------------------------------------->
+
+<h3>Viewing Virtual Machine Logs:</h3>
+
+- <b>a) Start the Virtual Machine:</b>
+	- Begin running the virtual machine as you normally would.
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/91251d6e-a47b-40f0-9506-94168f003add)
+ 
+- <b>b) Access Logs:</b>
+	- While the virtual machine is running, go to the "View" menu at the top of the VirtualBox window.
+ 	- Alternatively, when not running VM, at the top left menu, click on "Machine", then go to "Tools" and click "Logs".
+  - ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/1f1a8157-a89e-4dfa-88aa-6e39d9e2cd6e)
+
+<h3>Monitoring for Suspicious Activity:</h3>
+
+- <b>c) Regularly Check Logs:</b>
+	- <i>(Note) Periodically review the logs to check for any unusual or unexpected activities. Look for warnings or errors that might indicate issues or potential security concerns.</i>
+
+- <b>d) Automate Log Monitoring (Optional):</b>
+	- <i>(Note) You can set up external tools or scripts to automatically monitor the logs for specific events or patterns. This can be useful for real-time detection of potential security issues.</i>
+
+<!---------------------------------------------------------------------- SECTION BREAK ---------------------------------------------------------------------->
+
+<h2>Enable TPM & PAE/NX</h2>
+
+<h3>a) Enable TPM</h3>
+
+- <b>Click Settings and head to "System" tab.
+- In the "Motherboard" section, click the drop down menu next to "TPM" and choose "v2.0"</b>
+	- <i>(Note) TPM (Trusted Platform Module): Enabling TPM in VirtualBox enhances security by providing a dedicated hardware-based module that can securely store cryptographic keys, ensuring a higher level of protection against unauthorized access and tampering of sensitive data within virtual machines.</i>
+ 	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/62e5648c-f77f-4412-857b-59e2d0ac9fe4)
+
+<h3>b) Enable PAE/NX</h3>
+
+- <b>In the same area switch to the "Processor" tab instead of the Motherboard</b>
+	- ![image](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/c0a9302b-4edf-435e-a2f5-374a776d4eae)
+
+- <b>Click "Enable PAE/NX"</b>
+	- <i>(Note) Enabling PAE/NX in VirtualBox is beneficial for hardening as it allows the guest operating system to access more than 4 GB of physical memory, enhancing performance for memory-intensive tasks, and the No Execute feature helps mitigate certain security risks by preventing the execution of code in specific memory areas, adding an additional layer of protection against buffer overflow attacks.</i>
+	- ![Screenshot 2024-01-03 235338](https://github.com/AngelMcArthur/Linux-Project/assets/55830075/747fe26e-c617-4402-aecb-54a780b2126b)
 
